@@ -34,10 +34,10 @@ const Scene360Scaled = ({ initialPosition }) => {
       ktx2Loader.detectSupport(gl);
       const visibleImagesData = await Promise.all(
         visibleArray.map(async (image, index) => {
-          const lowImagePath = `./images_low/${
+          const lowImagePath = `./assets/images_low/${
             image.capturePaths[1].split("/")[1]
           }`;
-          const highImagePath = `./images_high/${
+          const highImagePath = `./assets/images_high/${
             image.capturePaths[1].split("/")[1]
           }`;
           const { default: lowtextureUrl } = await import(lowImagePath);
