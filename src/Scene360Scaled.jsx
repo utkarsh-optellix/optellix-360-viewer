@@ -1,17 +1,9 @@
-import React, {
-  Suspense,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { TextureLoader } from "three/src/loaders/TextureLoader";
-import Sphere from "./Sphere.jsx"; // Assuming you have a Sphere component defined elsewhere
-import * as THREE from "three";
 import { useFrame, useThree } from "@react-three/fiber";
-import { transforms } from "./transforms.js";
+import React, { Suspense, useEffect, useRef, useState } from "react";
+import * as THREE from "three";
 import { KTX2Loader } from "three/addons/loaders/KTX2Loader.js";
-import { Loader, useKTX2 } from "@react-three/drei";
+import Sphere from "./Sphere.jsx"; // Assuming you have a Sphere component defined elsewhere
+import { transforms } from "./transforms.js";
 
 const Scene360Scaled = ({ initialPosition }) => {
   const [visibleImages, setVisibleImages] = useState([]);
