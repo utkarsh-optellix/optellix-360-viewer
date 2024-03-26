@@ -32,8 +32,17 @@ const Scene360Scaled = ({ initialPosition }) => {
           const highImagePath = `/assets/images_high/${
             image.capturePaths[1].split("/")[1]
           }`;
-          const { default: lowtextureUrl } = await import(lowImagePath);
-          const { default: hightextureUrl } = await import(highImagePath);
+          const loadTexture = async (url) => {
+            const response = await fetch(url);
+            if (!response.ok) {
+              throw new Error(`Failed to fetch ${url}`);
+            }
+            return await response.blob();
+          };
+          const lowTextureBlob = await loadTexture(lowImagePath);
+          const highTextureBlob = await loadTexture(highImagePath);
+          const lowtextureUrl = URL.createObjectURL(lowTextureBlob);
+          const hightextureUrl = URL.createObjectURL(highTextureBlob);
 
           return {
             low: lowtextureUrl,
