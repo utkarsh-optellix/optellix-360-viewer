@@ -39,14 +39,10 @@ const Scene360Scaled = ({ initialPosition }) => {
             }
             return await response.blob();
           };
-          const lowTextureBlob = await loadTexture(lowImagePath);
-          const highTextureBlob = await loadTexture(highImagePath);
-          const lowtextureUrl = URL.createObjectURL(lowTextureBlob);
-          const hightextureUrl = URL.createObjectURL(highTextureBlob);
 
           return {
-            low: lowtextureUrl,
-            high: hightextureUrl,
+            low: lowImagePath,
+            high: highImagePath,
             position: [(startIndex + index) * 100, 0, 0], // Adjust positions as needed
           };
           // Return texture and position data
