@@ -1,18 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Canvas, useLoader } from "@react-three/fiber";
 import { Loader, OrbitControls, Stats } from "@react-three/drei";
-import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
+import { Canvas } from "@react-three/fiber";
+import { useState } from "react";
 
-import {
-  BufferGeometry,
-  Float32BufferAttribute,
-  MeshBasicMaterial,
-  SphereGeometry,
-  Mesh,
-} from "three";
-import { transforms } from "./transforms";
-
-import CameraControl from "./CameraControls.jsx";
 import Scene360Scaled from "./Scene360Scaled.jsx";
 
 function App() {
